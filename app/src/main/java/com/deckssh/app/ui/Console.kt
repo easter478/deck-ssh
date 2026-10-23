@@ -145,6 +145,7 @@ class Console {
             "glint" -> toggle("logo glint", store.glint, store::changeGlint)
             "rain" -> toggle("code rain", store.rain, store::changeRain)
             "haptics" -> toggle("haptics", store.haptics, store::changeHaptics)
+            "click", "sound" -> toggle("key click", store.click, store::changeClick)
             "awake" -> toggle("keep screen on", store.keepScreenOn, store::changeKeepScreenOn)
             "keys" -> number("key size", 36, 60, store.keyHeight, arg) { store.changeKeyHeight(it) }
             "font", "text" -> number("text size", 8, 24, store.fontSize.toInt(), arg) { store.changeFontSize(it.toFloat()) }
@@ -163,6 +164,7 @@ class Console {
             "/logo" to "logo glyph",
             "/brand" to "brand name",
             "/colors" to "screen colours",
+            "/click" to "key click on/off",
             "/clear" to "clear screen",
         ).forEach { (c, d) -> out("  ${c.padEnd(12)}$d") }
         dim("menus: type a number · Esc = back")
@@ -239,6 +241,7 @@ class Console {
             "key size" to "${store.keyHeight}",
             "text size" to "${store.fontSize.toInt()}",
             "haptics" to on(store.haptics),
+            "key click" to on(store.click),
             "stay awake" to on(store.keepScreenOn),
         ).map { (k, v) -> k.padEnd(12) + v }
         choose("setup", opts, arg) { n ->
@@ -252,7 +255,8 @@ class Console {
                 7 -> run("/keys")
                 8 -> run("/font")
                 9 -> run("/haptics")
-                10 -> run("/awake")
+                10 -> run("/click")
+                11 -> run("/awake")
             }
         }
     }

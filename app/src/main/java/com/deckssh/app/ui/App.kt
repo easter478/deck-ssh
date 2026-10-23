@@ -236,7 +236,7 @@ private fun Device(store: Store, skin: Skin, screenFg: Color, screenBg: Color, a
                     modifier = Modifier.clickable { consoleRun("/brand") },
                 )
             }
-            DeckKeyboard(router, skin, keyH, store.haptics, ::command)
+            DeckKeyboard(router, skin, keyH, store.haptics, store.click, ::command)
             Spacer(Modifier.height(14.dp))
         }
     }

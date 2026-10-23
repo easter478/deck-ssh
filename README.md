@@ -8,7 +8,7 @@ An Android SSH client that turns your phone into a cyberdeck. The keyboard is pa
 
 ## Features
 
-- **Built-in hardware-style keyboard** that takes at least 45% of the screen. It has a function row, a Samsung-style number row, BlackBerry alt legends, a numpad layer, F1–F12 and a trackpad or trackball for arrow keys. Every key press animates and buzzes.
+- **Built-in hardware-style keyboard** that takes at least 45% of the screen. It has a function row, a Samsung-style number row, a big L-shaped Enter key, BlackBerry alt legends, a numpad layer, F1–F12 and a trackpad or trackball for arrow keys. Every press lights the key up in the skin colour, pushes it down and vibrates, and there is an optional click sound (`/click`).
 - **Five device skins:** BlackBerry Bold, uConsole, Deck 95, Field deck and Matrix (with code rain behind the terminal). The logo glyph and brand name can be changed, and the logo glints.
 - **Everything is typed.** With no session open, the screen is a console with numbered menus:
 

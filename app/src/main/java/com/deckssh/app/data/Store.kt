@@ -98,6 +98,9 @@ class Store(context: Context) {
         private set
     var haptics by mutableStateOf(prefs.getBoolean("haptics", true))
         private set
+    /** Key click sound; off unless the user turns it on. */
+    var click by mutableStateOf(prefs.getBoolean("click", false))
+        private set
     var keepScreenOn by mutableStateOf(prefs.getBoolean("keepOn", true))
         private set
 
@@ -110,6 +113,7 @@ class Store(context: Context) {
     fun changeBrandText(skin: String, text: String) { brandTexts = brandTexts + (skin to text); prefs.edit().putString("brands", brandTexts.encode()).apply() }
     fun changeFontSize(s: Float) { fontSize = s; prefs.edit().putFloat("fontSize", s).apply() }
     fun changeHaptics(on: Boolean) { haptics = on; prefs.edit().putBoolean("haptics", on).apply() }
+    fun changeClick(on: Boolean) { click = on; prefs.edit().putBoolean("click", on).apply() }
     fun changeKeepScreenOn(on: Boolean) { keepScreenOn = on; prefs.edit().putBoolean("keepOn", on).apply() }
 
     fun save(h: Host) {

@@ -25,7 +25,8 @@ The whole screen is a device: chassis, top bezel with earpiece and LED, screen b
 - Skins are defined in `ui/Skins.kt`. The drawers and panels get a `Palette` derived from the skin (`Skin.ui`).
 - The deck (brand strip plus keyboard) always takes at least 45% of the screen height, and the key height grows to make that happen.
 - A Samsung-style number row (1–0, hold for ! @ # …) sits over the letters and the symbol layer. It is drawn short like the function row.
-- Every press shows feedback: the key dips and scales to 94%, a glow ring spreads out from it, a character bubble pops up, and the phone vibrates.
+- Enter is L-shaped: it covers its own cell plus the two cells below it on the letter and symbol layers.
+- Every press shows feedback: the key lights up in the skin glow colour and fades out over 320 ms, the pressed look lasts at least 110 ms, the key dips and scales to 90%, a glow ring spreads out from it, a character bubble pops up, the phone vibrates, and an optional click plays (`/click`).
 - Each skin's logo glyph and brand name are set with `/logo` and `/brand` in the console.
 - Screen colours either follow the skin (the default) or use one of the 87 palettes.
 
@@ -38,7 +39,7 @@ The whole screen is a device: chassis, top bezel with earpiece and LED, screen b
 - **Radius:** rKey 7, rSm 8, rMd 12, rLg 16 dp.
 - **Type:** caption 11, label 13, body 15, title 18 sp. Fonts: JetBrains Mono for the terminal and key legends, system sans for the rest of the UI.
 - **Touch:** targets are at least 44 dp. Key height can be set from 36 to 64 dp (default 46).
-- **Motion:** the keycap press is instant (no animation), the drawer uses Material's spring, and the caret blinks every 530 ms.
+- **Motion:** the keycap goes down instantly and fades back over 320 ms, the drawer uses Material's spring, and the caret blinks every 530 ms.
 
 ## Do
 
